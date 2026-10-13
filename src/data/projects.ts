@@ -170,7 +170,7 @@ export const projects: Project[] = [
     icon: 'helmet',
     tag: 'Hardware · Patent pending',
     title: 'Smart Safety Helmet for Delivery Riders',
-    role: 'Cyclist, Designer & Researcher',
+    role: 'Independent Designer & Builder',
     dates: 'Mar 2024 – Oct 2025',
     summary:
       'Field research showed that delivery riders repeatedly look down at their phones for navigation, orders and notifications. I designed, built and iterated a helmet with a heads-up display, aiming to reduce how often they need to look down.',
@@ -396,7 +396,7 @@ export const projects: Project[] = [
     title: 'Suzhou Youth Psychology Association',
     role: 'Youth Support Volunteer',
     summary:
-      'Join home visits and youth-support activities for adolescents facing depression, school refusal and academic withdrawal, under the guidance of mental-health professionals — listening first, and building trust from shared experience.',
+      'I take part in home visits and youth-support activities for adolescents facing depression, school refusal and academic withdrawal, under the guidance of mental-health professionals — listening first, and building trust from shared experience.',
     facts: [
       { label: 'Role', value: 'Youth Support Volunteer' },
       { label: 'Supervision', value: 'Mental-health professionals' },
@@ -407,7 +407,7 @@ export const projects: Project[] = [
       {
         heading: 'What I do',
         bullets: [
-          'Join home visits and youth-support activities under the guidance of mental-health professionals.',
+          'Take part in home visits and youth-support activities under the guidance of mental-health professionals.',
           'Use shared experience and attentive listening to build trust with teenagers reluctant to engage.',
           'Help create a less judgmental setting for conversation and support.',
         ],

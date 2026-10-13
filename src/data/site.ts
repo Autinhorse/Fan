@@ -124,12 +124,12 @@ export const ensembleClip: Clip = {
 };
 
 export const awards = [
-  { icon: 'grad' as IconName, title: 'Pioneer Research Program — Grade A', org: 'Pioneer Academics · credit awarded by Oberlin College', year: '2026', body: 'Paper independently reviewed by Oberlin faculty; rated “Excellent” in originality, communication, synthesis and curiosity.' },
+  { icon: 'grad' as IconName, title: 'Pioneer Research Program — Grade A', org: 'Pioneer Academics · credit awarded by Oberlin College', year: '2026', body: 'My animal-assisted therapy paper was independently reviewed by Oberlin faculty and rated “Excellent” in originality, communication, synthesis and curiosity.' },
   { icon: 'atom' as IconName, title: 'Physics Bowl — National Silver Award', org: 'American Association of Physics Teachers', year: '2025', body: 'National silver recognition in the AAPT high-school physics competition.' },
-  { icon: 'sigma' as IconName, title: 'AMC 10 — AIME Qualifier', org: 'Mathematical Association of America', year: '2025', body: 'Scored 111, qualifying for the American Invitational Mathematics Examination.' },
-  { icon: 'music' as IconName, title: 'ABRSM Viola Grade 8 — Distinction', org: 'Associated Board of the Royal Schools of Music', year: '', body: 'Highest graded level, awarded with Distinction.' },
-  { icon: 'robot' as IconName, title: 'FIRST Robotics — Third Prize', org: 'FIRST Robotics Competition', year: '', body: 'Third Prize and the Team Sustainability Award as team programmer.' },
-  { icon: 'bulb' as IconName, title: 'Invention Patent Application — Smart Helmet HUD', org: 'Application filed · pending examination', year: '', body: 'Filed for the heads-up display helmet described under Research & Engineering.' },
+  { icon: 'sigma' as IconName, title: 'AMC 10 — AIME Qualifier', org: 'Mathematical Association of America', year: '2025', body: 'Scored 111 on the AMC 10, qualifying for the American Invitational Mathematics Examination (AIME).' },
+  { icon: 'music' as IconName, title: 'ABRSM Viola Grade 8 — Distinction', org: 'Associated Board of the Royal Schools of Music', year: '', body: 'Passed the ABRSM Grade 8 viola practical exam with Distinction.' },
+  { icon: 'robot' as IconName, title: 'FIRST Robotics — Third Prize', org: 'FIRST Robotics Competition', year: '', body: 'As the team’s programmer, won a Third Prize and the Team Sustainability Award.' },
+  { icon: 'bulb' as IconName, title: 'Invention Patent Application — Smart Helmet HUD', org: 'Application filed · pending examination', year: '', body: 'Invention patent application filed for the heads-up display helmet described under Research & Engineering; pending examination.' },
 ];
 
 export const nav = [
