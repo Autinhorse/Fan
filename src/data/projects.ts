@@ -89,7 +89,7 @@ export const projects: Project[] = [
     points: [
       'Designed the headband PCB (dual-channel EEG front end, nRF52840 Bluetooth MCU, 6-axis IMU) and the closed-loop control pipeline: individual calibration, quality-weighted fusion, Kalman filtering and negative-feedback music control.',
       'Ran controlled experiments comparing closed-loop and static music; coordinated participant recruitment and processed the multimodal data with Python and machine learning (29 participants).',
-      'Under closed-loop feedback, variability of the composite arousal index fell by 12.8% — and I reported honestly that no learning benefit was shown, focusing the paper on system feasibility and measurement limits.',
+      'Under closed-loop feedback, variability of the composite arousal index fell by 12.8%. No learning benefit was detected, so the paper focuses on system feasibility and measurement limits.',
     ],
     hero: {
       src: ltArchitecture, diagram: true,
@@ -130,7 +130,7 @@ export const projects: Project[] = [
         heading: 'The experiment',
         paragraphs: [
           'A within-participant design compared closed-loop music driven by each participant’s real-time state with music from the same engine using static parameters. Each participant completed four word-learning blocks, two per condition, followed by recognition tests and attention probes.',
-          'Of 34 sessions, 30 produced complete records; after pre-registered exclusion rules, 29 participants entered the behavioral analysis and 24 — with sufficient raw EEG — entered the primary state analysis.',
+          'Of 34 sessions, 30 produced complete records; after data-quality exclusions, 29 participants entered the behavioral analysis and 24 — with sufficient raw EEG — entered the primary state analysis.',
         ],
       },
       {
@@ -170,7 +170,7 @@ export const projects: Project[] = [
     role: 'Cyclist, Designer & Researcher',
     dates: 'Mar 2024 – Oct 2025',
     summary:
-      'Field research showed that delivery riders repeatedly look down at their phones for navigation, orders and notifications. I designed, built and iterated a helmet with a heads-up display so they never have to.',
+      'Field research showed that delivery riders repeatedly look down at their phones for navigation, orders and notifications. I designed, built and iterated a helmet with a heads-up display, aiming to reduce how often they need to look down.',
     points: [
       'Translated rider observation into three goals: keep information in view, keep alerts from interfering with control, and keep the helmet’s protective structure intact.',
       'Built the full hardware pipeline: schematic, PCB layout and fabrication, ESP32 firmware and a custom 3D-printed mount for a micro-display with a reflective light guide.',
@@ -189,7 +189,7 @@ export const projects: Project[] = [
       { label: 'Stack', value: 'ESP32 · PCB design · IMU · 3D printing · Micro-display' },
     ],
     lead:
-      'To address the distraction caused by delivery riders repeatedly checking their phones, I independently designed, built and iteratively validated a helmet-integrated heads-up vision-assistance system.',
+      'To address the distraction caused by delivery riders repeatedly checking their phones, I independently designed and built a helmet-integrated heads-up vision-assistance system, refining it through successive prototypes.',
     sections: [
       {
         heading: 'Starting from the road',

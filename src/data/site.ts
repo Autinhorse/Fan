@@ -39,11 +39,11 @@ export const profile = {
     'Portfolio of Zimo (Ethan) Fan — student researcher at Suzhou North America High School working across neuroscience, psychology, engineering and music.',
 };
 
-export const stats = [
-  { value: '9', label: 'AP scores of 5' },
-  { value: 'A', label: 'Pioneer research grade' },
-  { value: '1,000+', label: 'Meditation club participations' },
-  { value: 'Grade 8', label: 'ABRSM viola, Distinction' },
+// Shown right under the hero, so the work is visible on the first screen.
+export const highlights: (Figure & { href: string })[] = [
+  { src: ltHeadband, alt: 'The custom EEG headband', caption: 'LearnTune — custom EEG headband', href: '/projects/learntune/' },
+  { src: helmetFinal, alt: 'The finished helmet prototype with a heads-up display', caption: 'Heads-up display helmet prototype', href: '/projects/smart-helmet/' },
+  { src: violaPortrait, alt: 'Zimo playing the viola on stage', caption: 'Seitz Concerto No. 5 — viola solo', href: '/projects/viola/' },
 ];
 
 export const about = {
@@ -109,13 +109,13 @@ export const awards = [
   { icon: 'sigma' as IconName, title: 'AMC 10 — AIME Qualifier', org: 'Mathematical Association of America', year: '2025', body: 'Scored 111, qualifying for the American Invitational Mathematics Examination.' },
   { icon: 'music' as IconName, title: 'ABRSM Viola Grade 8 — Distinction', org: 'Associated Board of the Royal Schools of Music', year: '', body: 'Highest graded level, awarded with Distinction.' },
   { icon: 'robot' as IconName, title: 'FIRST Robotics — Third Prize', org: 'FIRST Robotics Competition', year: '', body: 'Third Prize and the Team Sustainability Award as team programmer.' },
-  { icon: 'bulb' as IconName, title: 'Patent Pending — Smart Helmet HUD', org: 'Invention patent application', year: '', body: 'Helmet-integrated heads-up vision-assistance system for delivery riders.' },
+  { icon: 'bulb' as IconName, title: 'Invention Patent Application — Smart Helmet HUD', org: 'Application filed · pending examination', year: '', body: 'Filed for the heads-up display helmet described under Research & Engineering.' },
 ];
 
 export const nav = [
   { href: '/#about', label: 'About' },
-  { href: '/#academics', label: 'Academics' },
   { href: '/#research', label: 'Research' },
+  { href: '/#academics', label: 'Academics' },
   { href: '/#activities', label: 'Activities' },
   { href: '/#gallery', label: 'Gallery' },
   { href: '/#awards', label: 'Awards' },

@@ -4,7 +4,7 @@ import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import { profile, stats, about, academics, gallery, performance, awards } from '../data/site';
+import { profile, highlights, about, academics, gallery, performance, awards } from '../data/site';
 import { researchProjects, activityProjects, projectHref } from '../data/projects';
 
 const featured = researchProjects.filter((p) => p.featured);
@@ -41,12 +41,12 @@ const stars = [
         </div>
       </header>
 
-      <section class="container stats" aria-label="Highlights">
-        {stats.map((s) => (
-          <div class="reveal">
-            <div class="stats__value">{s.value}</div>
-            <div class="stats__label">{s.label}</div>
-          </div>
+      <section class="container highlights" aria-label="Selected work">
+        {highlights.map((h) => (
+          <a class="highlight reveal" href={h.href}>
+            <Image src={h.src} alt={h.alt} widths={[400, 700]} sizes="(max-width: 700px) 100vw, 380px" loading="eager" />
+            <span>{h.caption} →</span>
+          </a>
         ))}
       </section>
     </div>
@@ -69,36 +69,7 @@ const stars = [
       </div>
     </section>
 
-    <section id="academics" class="section section--raised">
-      <div class="container">
-        <p class="eyebrow">Academics</p>
-        <h2 class="section-title">Academic Foundation</h2>
-        <p class="section-lead">{academics.summary}</p>
-
-        <div class="scholarship accent-amber reveal">
-          <span class="icon-tile"><Icon name="grad" size={26} /></span>
-          <div>
-            <strong>{academics.scholarship.title}</strong>
-            <span>{academics.scholarship.detail}</span>
-          </div>
-        </div>
-
-        <div class="course-grid">
-          {academics.ap.map((c) => (
-            <div class="card course reveal">
-              <span class="icon-tile accent-violet"><Icon name={c.icon} /></span>
-              <div>
-                <h3>AP {c.course}</h3>
-                <div class="course__score">Score {c.score}</div>
-                <div class="course__area">{c.area}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section id="research" class="section" style="overflow: hidden">
+    <section id="research" class="section section--raised" style="overflow: hidden">
       <div class="glow" aria-hidden="true" style="top: 600px; right: -240px; width: 520px; height: 520px; background: #2e2c88; opacity: 0.35"></div>
       <div class="container" style="position: relative">
         <p class="eyebrow">Research &amp; Engineering</p>
@@ -160,6 +131,28 @@ const stars = [
             </article>
           ))}
         </div>
+      </div>
+    </section>
+
+    <section id="academics" class="section">
+      <div class="container">
+        <p class="eyebrow">Academics</p>
+        <h2 class="section-title">Academic Foundation</h2>
+        <p class="section-lead">{academics.summary}</p>
+
+        <div class="scholarship accent-amber reveal">
+          <span class="icon-tile"><Icon name="grad" size={26} /></span>
+          <div>
+            <strong>{academics.scholarship.title}</strong>
+            <span>{academics.scholarship.detail}</span>
+          </div>
+        </div>
+
+        <ul class="ap-list reveal">
+          {academics.ap.map((c) => (
+            <li><span>AP {c.course}</span><strong>{c.score}</strong></li>
+          ))}
+        </ul>
       </div>
     </section>
 
