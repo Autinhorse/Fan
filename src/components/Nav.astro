@@ -1,0 +1,15 @@
+---
+import { Image } from 'astro:assets';
+import { profile, nav } from '../data/site';
+---
+<nav class="nav" aria-label="Main">
+  <div class="container nav__inner">
+    <a class="nav__brand" href="/">
+      <Image src={profile.avatar} alt="" width={68} height={68} />
+      Zimo Fan
+    </a>
+    <div class="nav__links">
+      {nav.map((n) => <a href={n.href}>{n.label}</a>)}
+    </div>
+  </div>
+</nav>

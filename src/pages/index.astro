@@ -1,0 +1,243 @@
+---
+import { Image, getImage } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { profile, stats, about, academics, gallery, performance, awards } from '../data/site';
+import { researchProjects, activityProjects, projectHref } from '../data/projects';
+
+const featured = researchProjects.filter((p) => p.featured);
+const otherResearch = researchProjects.filter((p) => !p.featured);
+const poster = await getImage({ src: performance.poster, width: 1280, format: 'jpg' });
+// Fixed positions so the star field is identical on every build.
+const stars = [
+  [8, 12], [22, 30], [35, 8], [47, 22], [63, 14], [78, 9], [88, 28], [93, 52],
+  [70, 46], [55, 60], [15, 58], [30, 72], [82, 76], [42, 88], [6, 84], [60, 90],
+];
+---
+<Base>
+  <Nav />
+
+  <main id="top">
+    <div style="position: relative; overflow: hidden">
+      <div class="glow" aria-hidden="true" style="top: -80px; right: -180px; width: 620px; height: 620px; background: #3b3a9e; opacity: 0.55"></div>
+      <div class="glow" aria-hidden="true" style="top: 520px; left: -220px; width: 560px; height: 560px; background: #0f6b73; opacity: 0.5"></div>
+      <div class="glow" aria-hidden="true" style="top: 380px; left: 42%; width: 420px; height: 420px; background: #5a1a2a; opacity: 0.45"></div>
+      <div class="stars" aria-hidden="true" style="position: absolute; inset: 0">
+        {stars.map(([x, y]) => <span style={`left: ${x}%; top: ${y}%`}></span>)}
+      </div>
+
+      <header class="container hero">
+        <div class="hero__avatar">
+          <Image src={profile.avatar} alt={`Portrait of ${profile.name}`} width={232} height={232} loading="eager" />
+        </div>
+        <span class="pill"><span class="pill__dot"></span>Class of {profile.classOf} · {profile.school}</span>
+        <h1>Hi, I’m <span class="gradient-text">Zimo Fan</span></h1>
+        <p class="hero__intro">{profile.intro}</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#research">Explore My Work</a>
+          <a class="btn btn--ghost" href="#contact">Get In Touch</a>
+        </div>
+      </header>
+
+      <section class="container stats" aria-label="Highlights">
+        {stats.map((s) => (
+          <div class="reveal">
+            <div class="stats__value">{s.value}</div>
+            <div class="stats__label">{s.label}</div>
+          </div>
+        ))}
+      </section>
+    </div>
+
+    <section id="about" class="section" style="padding-top: 40px">
+      <div class="container about">
+        <div class="about__media reveal">
+          <Image src={about.image} alt={about.imageAlt} widths={[480, 760]} sizes="(max-width: 900px) 100vw, 600px" />
+        </div>
+        <div class="about__body reveal">
+          <p class="eyebrow">About me</p>
+          <h2>{about.heading[0]}<br />{about.heading[1]}</h2>
+          {about.paragraphs.map((p) => <p>{p}</p>)}
+          <dl class="about__facts">
+            {about.facts.map((f) => (
+              <div><dt>{f.label}</dt><dd>{f.value}</dd></div>
+            ))}
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="academics" class="section section--raised">
+      <div class="container">
+        <p class="eyebrow">Academics</p>
+        <h2 class="section-title">Academic Foundation</h2>
+        <p class="section-lead">{academics.summary}</p>
+
+        <div class="scholarship accent-amber reveal">
+          <span class="icon-tile"><Icon name="grad" size={26} /></span>
+          <div>
+            <strong>{academics.scholarship.title}</strong>
+            <span>{academics.scholarship.detail}</span>
+          </div>
+        </div>
+
+        <div class="course-grid">
+          {academics.ap.map((c) => (
+            <div class="card course reveal">
+              <span class="icon-tile accent-violet"><Icon name={c.icon} /></span>
+              <div>
+                <h3>AP {c.course}</h3>
+                <div class="course__score">Score {c.score}</div>
+                <div class="course__area">{c.area}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="research" class="section" style="overflow: hidden">
+      <div class="glow" aria-hidden="true" style="top: 600px; right: -240px; width: 520px; height: 520px; background: #2e2c88; opacity: 0.35"></div>
+      <div class="container" style="position: relative">
+        <p class="eyebrow">Research &amp; Engineering</p>
+        <h2 class="section-title">From Question to Prototype</h2>
+        <p class="section-lead">Independent projects carried through the full pipeline — field observation, hardware, experiments, analysis and writing.</p>
+
+        {featured.map((f) => (
+          <article class={`feature accent-${f.accent} reveal`}>
+            <div class="feature__head">
+              {f.dates && <span class="feature__dates">{f.dates}</span>}
+              <span class="tag">{f.tag}</span>
+            </div>
+            <h3><a class="title-link" href={projectHref(f)}>{f.title}</a></h3>
+            <p class="feature__role">{f.role}</p>
+            <div class="feature__grid">
+              <div class="feature__text">
+                <p>{f.summary}</p>
+                <ul class="feature__points">
+                  {f.points?.map((p) => <li>{p}</li>)}
+                </ul>
+                {f.paper && (
+                  <p class="feature__paper"><em>{f.paper.title}</em><br />{f.paper.note}</p>
+                )}
+              </div>
+              {f.hero && (
+                <figure class="feature__media" style="margin: 0">
+                  <div class={f.hero.diagram ? 'feature__hero' : 'feature__hero feature__hero--photo'}>
+                    <Image src={f.hero.src} alt={f.hero.alt} widths={[640, 1000, f.hero.src.width]} sizes="(max-width: 1000px) 100vw, 620px" />
+                  </div>
+                  <figcaption class="caption">{f.hero.caption}</figcaption>
+                </figure>
+              )}
+            </div>
+            <div class="figures">
+              {f.homeFigures?.map((fig) => (
+                <figure>
+                  <Image src={fig.src} alt={fig.alt} widths={[400, 700]} sizes="(max-width: 640px) 50vw, 400px" class={fig.src.format === 'png' ? 'is-chart' : undefined} />
+                  <figcaption class="caption">{fig.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+            <div class="feature__foot">
+              <a class="btn btn--ghost" href={projectHref(f)}>Read the full project →</a>
+              {f.paper && <a class="text-link" href={f.paper.href} target="_blank" rel="noopener">Paper (PDF)</a>}
+            </div>
+          </article>
+        ))}
+
+        <h3 class="section-title" style="font-size: clamp(30px, 4vw, 40px); margin-top: 96px">Psychology &amp; Policy Research</h3>
+        <div class="research-grid">
+          {otherResearch.map((r) => (
+            <article class={`card research-card accent-${r.accent} reveal`} style="border-top: 3px solid var(--accent)">
+              <span class="icon-tile"><Icon name={r.icon} size={26} /></span>
+              <h3><a class="title-link stretched" href={projectHref(r)}>{r.title}</a></h3>
+              <div class="research-card__meta">{r.highlight ?? r.role}</div>
+              {r.dates && <div class="research-card__dates">{r.dates}</div>}
+              <p>{r.summary}</p>
+              <span class="more">{r.paper ? 'Read more & paper →' : 'Read more →'}</span>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="activities" class="section section--raised">
+      <div class="container">
+        <p class="eyebrow">Activities</p>
+        <h2 class="section-title">Beyond the Classroom</h2>
+        <p class="section-lead">Communities I founded, people I support, and the music that started it all.</p>
+        <div class="timeline">
+          {activityProjects.map((a) => (
+            <div class={`timeline__item accent-${a.accent} reveal`}>
+              <div class="timeline__card">
+                <div class="timeline__text">
+                  <span class="tag">{a.tag}</span>
+                  <h3><a class="title-link stretched" href={projectHref(a)}>{a.title}</a></h3>
+                  <p class="timeline__role">{a.role}</p>
+                  <p>{a.summary}</p>
+                  {a.highlight && <span class="timeline__highlight">{a.highlight}</span>}
+                  <span class="more">Read more →</span>
+                </div>
+                {a.cardImage ? (
+                  <div class="timeline__media">
+                    <Image src={a.cardImage.src} alt={a.cardImage.alt} widths={[300, 520]} sizes="260px" />
+                  </div>
+                ) : (
+                  <div class="timeline__icon"><Icon name={a.icon} size={48} /></div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="container">
+        <p class="eyebrow">Gallery</p>
+        <h2 class="section-title">Moments</h2>
+        <div class="gallery">
+          {gallery.map((g) => (
+            <figure class="reveal">
+              <Image src={g.src} alt={g.alt} widths={[420, 800]} sizes="(max-width: 700px) 100vw, 420px" />
+              <figcaption>{g.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+
+        <h3 class="section-title" style="font-size: clamp(28px, 3.5vw, 36px); margin-top: 72px">{performance.title}</h3>
+        <p class="section-lead" style="margin-top: 8px; font-size: 15px">{performance.subtitle}</p>
+        <div class="video reveal">
+          <video controls preload="none" playsinline poster={poster.src}>
+            <source src={performance.video} type="video/mp4" />
+            Your browser does not support embedded video. <a href={performance.video}>Download the performance</a>.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards" class="section section--raised">
+      <div class="container">
+        <p class="eyebrow">Awards &amp; Honors</p>
+        <h2 class="section-title">Recognition</h2>
+        <p class="section-lead">Selected honors from research programs, competitions, music and engineering.</p>
+        <div class="award-grid">
+          {awards.map((a) => (
+            <div class="card award accent-amber reveal">
+              <span class="icon-tile" style="width: 56px; height: 56px"><Icon name={a.icon} size={26} /></span>
+              <div>
+                <h3>{a.title}</h3>
+                <div class="award__org">{a.org}{a.year && ` · ${a.year}`}</div>
+                <p>{a.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Base>

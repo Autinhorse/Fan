@@ -1,0 +1,122 @@
+// All site copy lives here. Edit this file to update the portfolio content.
+import type { ImageMetadata } from 'astro';
+
+import avatar from '../assets/img/avatar.jpg';
+import aboutViola from '../assets/img/about-viola.jpg';
+import violaPortrait from '../assets/img/viola-portrait.jpg';
+import campusWalk from '../assets/img/campus-walk.jpg';
+import cyclingSunset from '../assets/img/cycling-sunset.jpg';
+import ltHeadband from '../assets/img/learntune-headband.jpg';
+import helmetFinal from '../assets/img/helmet-final.jpg';
+import helmetAssembly from '../assets/img/helmet-assembly.jpg';
+import meditationBowls from '../assets/img/meditation-bowls.jpg';
+import fantuan from '../assets/img/fantuan.jpg';
+import zimoFantuan from '../assets/img/zimo-fantuan.jpg';
+import performancePoster from '../assets/img/performance-poster.jpg';
+
+export type Accent = 'cyan' | 'violet' | 'pink' | 'amber' | 'green';
+export type IconName =
+  | 'wave' | 'helmet' | 'globe' | 'book' | 'scale' | 'pen' | 'atom' | 'sigma'
+  | 'flask' | 'code' | 'chart' | 'leaf' | 'brain' | 'landmark' | 'trophy'
+  | 'medal' | 'music' | 'robot' | 'bulb' | 'grad' | 'heart' | 'cat' | 'lotus'
+  | 'users' | 'planet';
+
+export interface Figure { src: ImageMetadata; alt: string; caption?: string }
+
+export const profile = {
+  name: 'Zimo (Ethan) Fan',
+  firstName: 'Zimo',
+  lastName: 'Fan',
+  school: 'Suzhou North America High School',
+  schoolShort: 'SNA',
+  location: 'Suzhou, China',
+  classOf: '2027',
+  email: 'zimofan_ethan@126.com',
+  avatar,
+  intro:
+    'Student researcher and maker exploring how the brain pays attention — through EEG experiments, wearable hardware, psychology research, and the viola I have played since I was five.',
+  description:
+    'Portfolio of Zimo (Ethan) Fan — student researcher at Suzhou North America High School working across neuroscience, psychology, engineering and music.',
+};
+
+export const stats = [
+  { value: '9', label: 'AP scores of 5' },
+  { value: 'A', label: 'Pioneer research grade' },
+  { value: '1,000+', label: 'Meditation club participations' },
+  { value: 'Grade 8', label: 'ABRSM viola, Distinction' },
+];
+
+export const about = {
+  image: aboutViola,
+  imageAlt: 'Zimo playing the viola on stage',
+  heading: ['Steady Hands,', 'Curious Mind'],
+  paragraphs: [
+    'I started the viola at five, on a doctor’s advice, to strengthen fingers affected by cerebral palsy. The instrument trained me — and, in the years I resisted it, my cat Fantuan kept me company without asking anything of me. Both taught me how much the body, the mind and the things around us shape one another.',
+    'That question now runs through everything I do: building a closed-loop EEG system that adapts music to attention, designing a heads-up helmet so delivery riders never look down, researching animal-assisted therapy across cultures, and creating quiet spaces for classmates under pressure.',
+  ],
+  facts: [
+    { label: 'School', value: 'Suzhou North America High School' },
+    { label: 'Graduation', value: 'June 2027' },
+    { label: 'Interests', value: 'Neuroscience · Psychology · Engineering' },
+  ],
+};
+
+export const academics = {
+  summary:
+    'A STEM-heavy course load alongside psychology and research — attending SNA on a full-ride merit scholarship from Grade 9 through Grade 12.',
+  scholarship: {
+    title: 'Full-Ride Merit Scholarship',
+    detail: 'Suzhou North America High School · Grade 9 to Grade 12',
+  },
+  ap: [
+    { course: 'Calculus BC', score: 5, icon: 'sigma', area: 'Mathematics' },
+    { course: 'Calculus AB', score: 5, icon: 'sigma', area: 'Mathematics' },
+    { course: 'Statistics', score: 5, icon: 'chart', area: 'Mathematics' },
+    { course: 'Physics C: Mechanics', score: 5, icon: 'atom', area: 'Science' },
+    { course: 'Physics C: Electricity & Magnetism', score: 5, icon: 'atom', area: 'Science' },
+    { course: 'Chemistry', score: 5, icon: 'flask', area: 'Science' },
+    { course: 'Computer Science A', score: 5, icon: 'code', area: 'Computing' },
+    { course: 'English Language & Composition', score: 5, icon: 'pen', area: 'Humanities' },
+    { course: 'Research', score: 5, icon: 'book', area: 'Capstone' },
+    { course: 'Biology', score: 4, icon: 'leaf', area: 'Science' },
+    { course: 'Psychology', score: 4, icon: 'brain', area: 'Social Science' },
+    { course: 'United States History', score: 4, icon: 'landmark', area: 'Humanities' },
+  ] satisfies { course: string; score: number; icon: IconName; area: string }[],
+};
+
+export const gallery: (Figure & { tall?: boolean })[] = [
+  { src: violaPortrait, alt: 'Zimo playing the viola on stage', caption: 'Seitz Concerto No. 5 — on stage', tall: true },
+  { src: helmetAssembly, alt: 'Fitting the circuit board inside the helmet', caption: 'Fitting the helmet electronics' },
+  { src: ltHeadband, alt: 'The custom EEG headband', caption: 'LearnTune headband' },
+  { src: cyclingSunset, alt: 'Zimo cycling along a coastal road at sunset', caption: 'Evening ride', tall: true },
+  { src: zimoFantuan, alt: 'Zimo studying with Fantuan the cat on the desk', caption: 'Study partner' },
+  { src: meditationBowls, alt: 'Singing bowls for a meditation session', caption: 'Meditation club sound bath' },
+  { src: campusWalk, alt: 'Zimo walking along a snowy campus path at dusk', caption: 'Winter walk', tall: true },
+  { src: fantuan, alt: 'Fantuan, a long-haired white cat, sitting on a stack of books', caption: 'Fantuan' },
+  { src: helmetFinal, alt: 'The finished helmet prototype', caption: 'Helmet HUD prototype' },
+];
+
+export const performance = {
+  title: 'Featured Performance',
+  subtitle: 'Friedrich Seitz — Concerto No. 5, 1st movement · Viola solo · SNA Chamber Music & Choir Concert · June 2025',
+  video: '/media/seitz-concerto-viola.mp4',
+  poster: performancePoster,
+};
+
+export const awards = [
+  { icon: 'grad' as IconName, title: 'Pioneer Research Program — Grade A', org: 'Pioneer Academics · credit awarded by Oberlin College', year: '2026', body: 'Paper independently reviewed by Oberlin faculty; rated “Excellent” in originality, communication, synthesis and curiosity.' },
+  { icon: 'atom' as IconName, title: 'Physics Bowl — National Silver Award', org: 'American Association of Physics Teachers', year: '2025', body: 'National silver recognition in the AAPT high-school physics competition.' },
+  { icon: 'sigma' as IconName, title: 'AMC 10 — AIME Qualifier', org: 'Mathematical Association of America', year: '2025', body: 'Scored 111, qualifying for the American Invitational Mathematics Examination.' },
+  { icon: 'music' as IconName, title: 'ABRSM Viola Grade 8 — Distinction', org: 'Associated Board of the Royal Schools of Music', year: '', body: 'Highest graded level, awarded with Distinction.' },
+  { icon: 'robot' as IconName, title: 'FIRST Robotics — Third Prize', org: 'FIRST Robotics Competition', year: '', body: 'Third Prize and the Team Sustainability Award as team programmer.' },
+  { icon: 'bulb' as IconName, title: 'Patent Pending — Smart Helmet HUD', org: 'Invention patent application', year: '', body: 'Helmet-integrated heads-up vision-assistance system for delivery riders.' },
+];
+
+export const nav = [
+  { href: '/#about', label: 'About' },
+  { href: '/#academics', label: 'Academics' },
+  { href: '/#research', label: 'Research' },
+  { href: '/#activities', label: 'Activities' },
+  { href: '/#gallery', label: 'Gallery' },
+  { href: '/#awards', label: 'Awards' },
+];
