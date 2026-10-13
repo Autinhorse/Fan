@@ -334,40 +334,6 @@ export const projects: Project[] = [
       href: '/papers/when-recognition-becomes-a-label.pdf',
     },
   },
-  {
-    slug: 'religion-in-education',
-    kind: 'research',
-    accent: 'violet',
-    icon: 'scale',
-    tag: 'Policy research',
-    title: 'Religion in Education: A Policy Comparison',
-    role: 'Independent Researcher',
-    dates: 'Dec 2025 – Feb 2026',
-    summary:
-      'Compared how China, the United States and European systems regulate religious content and expression in compulsory schooling, and what that means for adolescents’ access to spiritual support and identity exploration.',
-    facts: [
-      { label: 'Role', value: 'Independent Researcher' },
-      { label: 'Timeline', value: 'Dec 2025 – Feb 2026' },
-      { label: 'Scope', value: 'China · United States · Europe' },
-    ],
-    lead:
-      'How do different education systems decide what students may learn, say and explore about religion — and what does that mean for teenagers looking for meaning?',
-    sections: [
-      {
-        heading: 'What I studied',
-        bullets: [
-          'Compared how China, the United States and European education systems regulate religious content, expression and discussion within compulsory schooling.',
-          'Reviewed policy documents and secondary research to analyze implications for adolescents’ access to spiritual support, identity exploration and religious expression in school settings.',
-        ],
-      },
-      {
-        heading: 'Why it matters to me',
-        paragraphs: [
-          'My time living and volunteering at a Buddhist temple showed me how much contemplative practice can support wellbeing. This project asked a policy question behind that experience: where schools draw the line between neutrality and leaving students without support.',
-        ],
-      },
-    ],
-  },
 
   // ——— Activities ———
   {
@@ -460,40 +426,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: 'cafe-stray',
-    kind: 'activity',
-    accent: 'green',
-    icon: 'cat',
-    tag: 'Community',
-    title: 'Café Stray',
-    role: 'Founder & Operator',
-    summary:
-      'A cat-café style space that shelters stray cats, pairs animal companionship with calming music, and introduces visitors to responsible adoption. I coordinate volunteers and partner with adoption organizations.',
-    facts: [
-      { label: 'Role', value: 'Founder & Operator' },
-      { label: 'Partners', value: 'Animal adoption organizations · volunteers' },
-    ],
-    lead:
-      'Café Stray brings together two things that helped me most — animal companionship and music — in a space that also gives stray cats a path to a home.',
-    sections: [
-      {
-        heading: 'What Café Stray does',
-        bullets: [
-          'Shelters stray cats in a cat-café style community space.',
-          'Pairs animal companionship with calming music for visitors.',
-          'Introduces visitors to responsible adoption and animal care.',
-        ],
-      },
-      {
-        heading: 'How I run it',
-        bullets: [
-          'Coordinate volunteers and partner with adoption organizations.',
-          'Developed pet-and-music community sessions informed by research on animal-assisted and music-based support.',
-        ],
-      },
-    ],
-  },
-  {
     slug: 'youth-psychology-association',
     kind: 'activity',
     accent: 'cyan',
@@ -579,43 +511,7 @@ export const projects: Project[] = [
       {
         heading: 'Going back',
         paragraphs: [
-          'I returned as a long-term volunteer and peer mentor, supporting younger participants. The experience deepened my interest in religion, consciousness and the role of spiritual practice in wellbeing — and later led to the meditation club and my policy research on religion in schools.',
-        ],
-      },
-    ],
-  },
-  {
-    slug: 'hyperrooms-wiki',
-    kind: 'activity',
-    accent: 'cyan',
-    icon: 'planet',
-    tag: 'Creative',
-    title: 'Hyperrooms Science-Fiction Wiki',
-    role: 'Founder & Worldbuilding Team Lead',
-    summary:
-      'Founded a collaborative science-fiction universe and lead a seven-person core team through 500+ pages of interconnected lore, with editing and version-control workflows that keep every storyline consistent.',
-    highlight: '7-person core team · 500+ pages',
-    facts: [
-      { label: 'Role', value: 'Founder & Worldbuilding Team Lead' },
-      { label: 'Team', value: 'Seven-member core team' },
-      { label: 'Scale', value: '500+ interconnected pages' },
-    ],
-    lead:
-      'Hyperrooms is a science-fiction universe built by a team — and keeping hundreds of pages consistent is an engineering problem as much as a creative one.',
-    sections: [
-      {
-        heading: 'Building the world',
-        bullets: [
-          'Founded a collaborative science-fiction universe and led a seven-member core team.',
-          'Developed 500+ pages of interconnected lore, locations, timelines, organizations and stories.',
-        ],
-      },
-      {
-        heading: 'Keeping it consistent',
-        bullets: [
-          'Designed the worldbuilding architecture.',
-          'Established editing and version-control workflows.',
-          'Coordinated contributors so independently written storylines remained internally consistent.',
+          'I returned as a long-term volunteer and peer mentor, supporting younger participants. The experience deepened my interest in religion, consciousness and the role of spiritual practice in wellbeing — and later led to the meditation club.',
         ],
       },
     ],
