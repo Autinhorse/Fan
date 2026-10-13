@@ -52,7 +52,7 @@ export const about = {
   heading: ['Steady Hands,', 'Curious Mind'],
   paragraphs: [
     'I started the viola at five, on a doctor’s advice, to strengthen fingers affected by cerebral palsy. The instrument trained me — and, in the years I resisted it, my cat Fantuan kept me company without asking anything of me. Both taught me how much the body, the mind and the things around us shape one another.',
-    'That question now runs through everything I do: building a closed-loop EEG system that adapts music to attention, designing a heads-up helmet so delivery riders never look down, researching animal-assisted therapy across cultures, and creating quiet spaces for classmates under pressure.',
+    'That question now runs through everything I do: building a closed-loop EEG system that adapts music to attention, designing a heads-up helmet to help delivery riders keep their eyes on the road, researching animal-assisted therapy across cultures, and creating quiet spaces for classmates under pressure.',
   ],
   facts: [
     { label: 'School', value: 'Suzhou North America High School' },

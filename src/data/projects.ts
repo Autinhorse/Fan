@@ -87,9 +87,9 @@ export const projects: Project[] = [
     summary:
       'A wearable system that reads a learner’s state and adapts music in real time. I designed and built a custom scalp-EEG headband, fused it with camera-derived heart rate and facial arousal, and ran a within-participant experiment during word learning.',
     points: [
-      'Designed the headband PCB (dual-channel EEG front end, nRF52840 Bluetooth MCU, 6-axis IMU) and the closed-loop control pipeline: individual calibration, quality-weighted fusion, Kalman filtering and negative-feedback music control.',
-      'Ran controlled experiments comparing closed-loop and static music; coordinated participant recruitment and processed the multimodal data with Python and machine learning (29 participants).',
-      'Under closed-loop feedback, variability of the composite arousal index fell by 12.8%. No learning benefit was detected, so the paper focuses on system feasibility and measurement limits.',
+      'Built the system: a custom EEG headband plus software that combines brain, heart-rate and facial signals and adjusts the music in real time.',
+      'Ran a word-learning experiment comparing adaptive and static music; coordinated recruitment and processed the data with Python and machine learning — 29 participants in the behavioral analysis; 24 in the primary state analysis.',
+      'In this exploratory pilot, variability of the composite arousal index was 12.8% lower with adaptive music — significant in one test but not after correction in another. No learning benefit was detected, so the paper focuses on system feasibility and measurement limits.',
     ],
     hero: {
       src: ltArchitecture, diagram: true,
@@ -136,7 +136,7 @@ export const projects: Project[] = [
       {
         heading: 'What I found',
         bullets: [
-          'Over the full feedback period, the standard deviation of the composite index was 12.8% lower under closed-loop feedback (Wilcoxon p = 0.0231; paired t-test after BH correction p = 0.0554).',
+          'Over the full feedback period, the standard deviation of the composite index was 12.8% lower under closed-loop feedback (Wilcoxon p = 0.0231; paired t-test after BH correction p = 0.0554). Because the two tests disagree after correction, this is an exploratory result, not a confirmed effect.',
           'No significant difference was found in the mean level; changes in individual channels appeared mainly in facial arousal.',
           'No improvement was detected in recognition discriminability or reaction time — so the paper presents the system and its measurement limits, not a learning benefit.',
         ],
@@ -173,7 +173,7 @@ export const projects: Project[] = [
       'Field research showed that delivery riders repeatedly look down at their phones for navigation, orders and notifications. I designed, built and iterated a helmet with a heads-up display, aiming to reduce how often they need to look down.',
     points: [
       'Translated rider observation into three goals: keep information in view, keep alerts from interfering with control, and keep the helmet’s protective structure intact.',
-      'Built the full hardware pipeline: schematic, PCB layout and fabrication, ESP32 firmware and a custom 3D-printed mount for a micro-display with a reflective light guide.',
+      'Designed and built the electronics, firmware and a 3D-printed mount that places a small display at the edge of the rider’s view.',
       'Wrote the “Rigonomics” posture algorithm, which computes body angles from IMU data; added LED indicators, collision detection, environmental sensing and handlebar controls.',
     ],
     hero: { src: helmetFinal, alt: 'The finished helmet with the heads-up display mounted at the edge of the rider’s view', caption: 'Final prototype: speed, posture and battery at the edge of the rider’s vision.' },
