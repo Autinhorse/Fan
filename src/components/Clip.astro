@@ -1,0 +1,15 @@
+---
+// A portrait (phone) video clip with a caption, used on the home page.
+import type { ImageMetadata } from 'astro';
+import { getImage } from 'astro:assets';
+
+interface Props { src: string; poster: ImageMetadata; title: string }
+const { src, poster, title } = Astro.props;
+const posterImg = await getImage({ src: poster, width: 640, format: 'jpg' });
+---
+<figure class="clip">
+  <div class="video video--portrait">
+    <video controls preload="none" playsinline poster={posterImg.src}><source src={src} type="video/mp4" /></video>
+  </div>
+  <figcaption class="caption">{title}</figcaption>
+</figure>

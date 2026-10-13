@@ -13,6 +13,11 @@ import meditationBowls from '../assets/img/meditation-bowls.jpg';
 import fantuan from '../assets/img/fantuan.jpg';
 import zimoFantuan from '../assets/img/zimo-fantuan.jpg';
 import performancePoster from '../assets/img/performance-poster.jpg';
+import childhoodWhiteShirt from '../assets/img/childhood-white-shirt.jpg';
+import posterStairs from '../assets/img/poster-fantuan-stairs.jpg';
+import posterPractice from '../assets/img/poster-viola-practice.jpg';
+import posterChamber from '../assets/img/poster-chamber-rehearsal.jpg';
+import posterLearntune from '../assets/img/poster-learntune-experiment.jpg';
 
 export type Accent = 'cyan' | 'violet' | 'pink' | 'amber' | 'green';
 export type IconName =
@@ -22,6 +27,7 @@ export type IconName =
   | 'users' | 'planet';
 
 export interface Figure { src: ImageMetadata; alt: string; caption?: string }
+export interface Clip { src: string; poster: ImageMetadata; title: string }
 
 export const profile = {
   name: 'Zimo (Ethan) Fan',
@@ -52,8 +58,15 @@ export const about = {
   heading: ['Steady Hands,', 'Curious Mind'],
   paragraphs: [
     'I started the viola at five, on a doctor’s advice, to strengthen fingers affected by cerebral palsy. The instrument trained me — and, in the years I resisted it, my cat Fantuan kept me company without asking anything of me. Both taught me how much the body, the mind and the things around us shape one another.',
-    'That question now runs through everything I do: building a closed-loop EEG system that adapts music to attention, designing a heads-up helmet to help delivery riders keep their eyes on the road, researching animal-assisted therapy across cultures, and creating quiet spaces for classmates under pressure.',
+    'That question now runs through everything I do: building a closed-loop EEG system that adapts music to attention, designing a heads-up helmet to help delivery riders keep their eyes on the road, researching animal-assisted therapy across cultures, creating quiet spaces for classmates under pressure, supporting teenagers who have stepped away from school, and learning to listen inside an ensemble.',
   ],
+  early: { src: childhoodWhiteShirt, alt: 'Zimo as a young child playing a small violin', caption: 'Where it started — prescribed, not chosen.' } as Figure,
+  // Shown right under the first paragraph, which introduces Fantuan.
+  clips: [
+    { src: '/media/fantuan-stairs.mp4', poster: posterStairs, title: 'Fantuan on the stairs' },
+    { src: '/media/viola-practice.mp4', poster: posterPractice, title: 'Practising the viola' },
+  ] as Clip[],
+  clipsNote: 'No expectations — just presence.',
   facts: [
     { label: 'School', value: 'Suzhou North America High School' },
     { label: 'Graduation', value: 'June 2027' },
@@ -88,6 +101,7 @@ export const gallery: (Figure & { tall?: boolean })[] = [
   { src: violaPortrait, alt: 'Zimo playing the viola on stage', caption: 'Seitz Concerto No. 5 — on stage', tall: true },
   { src: helmetAssembly, alt: 'Fitting the circuit board inside the helmet', caption: 'Fitting the helmet electronics' },
   { src: ltHeadband, alt: 'The custom EEG headband', caption: 'LearnTune headband' },
+  { src: posterLearntune, alt: 'A participant wearing the EEG headband during an experiment session', caption: 'LearnTune experiment session' },
   { src: cyclingSunset, alt: 'Zimo cycling along a coastal road at sunset', caption: 'Evening ride', tall: true },
   { src: zimoFantuan, alt: 'Zimo studying with Fantuan the cat on the desk', caption: 'Study partner' },
   { src: meditationBowls, alt: 'Singing bowls for a meditation session', caption: 'Meditation club sound bath' },
@@ -101,6 +115,12 @@ export const performance = {
   subtitle: 'Friedrich Seitz — Concerto No. 5, 1st movement · Viola solo · SNA Chamber Music & Choir Concert · June 2025',
   video: '/media/seitz-concerto-viola.mp4',
   poster: performancePoster,
+};
+
+export const ensembleClip: Clip = {
+  src: '/media/chamber-rehearsal.mp4',
+  poster: posterChamber,
+  title: 'Rehearsal clip — five players, one score. Learning to listen instead of lead.',
 };
 
 export const awards = [

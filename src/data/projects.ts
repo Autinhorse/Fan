@@ -63,6 +63,8 @@ export interface Project {
   hero?: Figure & { diagram?: boolean };
   /** Small figure strip shown on the home page (featured projects only). */
   homeFigures?: Figure[];
+  /** Portrait clip shown under the figure strip on the home page. */
+  homeVideo?: Video;
   facts: { label: string; value: string }[];
   lead: string;
   sections: Section[];
@@ -101,6 +103,7 @@ export const projects: Project[] = [
       { src: ltHeadband, alt: 'The finished EEG headband', caption: 'Finished headband' },
       { src: ltResults, alt: 'Paired chart: within-block standard deviation is lower under closed-loop feedback for 17 of 24 participants', caption: 'Results: 17 of 24 participants showed lower variability' },
     ],
+    homeVideo: { src: '/media/learntune-experiment.mp4', poster: posterLearntune, title: 'A participant wearing the EEG headband during a word-learning session.' },
     facts: [
       { label: 'Role', value: 'Student Researcher (first author)' },
       { label: 'Timeline', value: 'Nov 2025 – Present' },
@@ -295,7 +298,7 @@ export const projects: Project[] = [
     title: 'When Recognition Becomes a Label',
     role: 'John Locke Institute Global Essay Prize · Psychology',
     summary:
-      'Are mental illnesses overdiagnosed? Drawing on the looping effect, diagnosis data and popular culture, I argue they are both overdiagnosed and better recognized — and that the real question is whether care can be offered without requiring a label first.',
+      'Are mental illnesses overdiagnosed? Drawing on the looping effect — a diagnosis as a label that changes the behavior it describes — along with diagnosis data and popular culture, I argue they are both overdiagnosed and better recognized — and that the real question is whether care can be offered without requiring a label first.',
     facts: [
       { label: 'Competition', value: 'John Locke Institute Global Essay Prize' },
       { label: 'Category', value: 'Psychology' },
@@ -385,6 +388,39 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: 'youth-psychology-association',
+    kind: 'activity',
+    accent: 'cyan',
+    icon: 'heart',
+    tag: 'Service',
+    title: 'Suzhou Youth Psychology Association',
+    role: 'Youth Support Volunteer',
+    summary:
+      'Join home visits and youth-support activities for adolescents facing depression, school refusal and academic withdrawal, under the guidance of mental-health professionals — listening first, and building trust from shared experience.',
+    facts: [
+      { label: 'Role', value: 'Youth Support Volunteer' },
+      { label: 'Supervision', value: 'Mental-health professionals' },
+    ],
+    lead:
+      'I volunteer with adolescents who are struggling with depression, school refusal and academic withdrawal — young people who are often reluctant to talk to adults.',
+    sections: [
+      {
+        heading: 'What I do',
+        bullets: [
+          'Join home visits and youth-support activities under the guidance of mental-health professionals.',
+          'Use shared experience and attentive listening to build trust with teenagers reluctant to engage.',
+          'Help create a less judgmental setting for conversation and support.',
+        ],
+      },
+      {
+        heading: 'What it taught me',
+        paragraphs: [
+          'These visits shaped my John Locke essay: I met teenagers using diagnoses to explain away every difficulty, and others whose severe symptoms were dismissed as laziness. Both made me think harder about what diagnosis is for.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'chamber-strings',
     kind: 'activity',
     accent: 'amber',
@@ -422,98 +458,7 @@ export const projects: Project[] = [
       { src: violaSoloBlack, alt: 'Zimo performing a viola solo in concert dress', caption: 'Solo at the concert' },
     ],
     videos: [
-      { src: '/media/chamber-rehearsal.mp4', poster: posterChamber, title: 'Ensemble rehearsal', portrait: true },
-    ],
-  },
-  {
-    slug: 'youth-psychology-association',
-    kind: 'activity',
-    accent: 'cyan',
-    icon: 'heart',
-    tag: 'Service',
-    title: 'Suzhou Youth Psychology Association',
-    role: 'Youth Support Volunteer',
-    summary:
-      'Join home visits and youth-support activities for adolescents facing depression, school refusal and academic withdrawal, under the guidance of mental-health professionals — listening first, and building trust from shared experience.',
-    facts: [
-      { label: 'Role', value: 'Youth Support Volunteer' },
-      { label: 'Supervision', value: 'Mental-health professionals' },
-    ],
-    lead:
-      'I volunteer with adolescents who are struggling with depression, school refusal and academic withdrawal — young people who are often reluctant to talk to adults.',
-    sections: [
-      {
-        heading: 'What I do',
-        bullets: [
-          'Join home visits and youth-support activities under the guidance of mental-health professionals.',
-          'Use shared experience and attentive listening to build trust with teenagers reluctant to engage.',
-          'Help create a less judgmental setting for conversation and support.',
-        ],
-      },
-      {
-        heading: 'What it taught me',
-        paragraphs: [
-          'These visits shaped my John Locke essay: I met teenagers using diagnoses to explain away every difficulty, and others whose severe symptoms were dismissed as laziness. Both made me think harder about what diagnosis is for.',
-        ],
-      },
-    ],
-  },
-  {
-    slug: 'first-robotics',
-    kind: 'activity',
-    accent: 'violet',
-    icon: 'robot',
-    tag: 'STEM',
-    title: 'FIRST Robotics Competition',
-    role: 'Programmer',
-    summary:
-      'Responsible for programming and part of the component machining and assembly. Competed with the team across several events, winning a Third Prize and the Team Sustainability Award.',
-    highlight: 'Third Prize · Team Sustainability Award',
-    facts: [
-      { label: 'Role', value: 'Programmer' },
-      { label: 'Awards', value: 'Third Prize · Team Sustainability Award' },
-    ],
-    lead: 'On my FIRST Robotics team I wrote the robot’s code and helped build it.',
-    sections: [
-      {
-        heading: 'My role',
-        bullets: [
-          'Responsible for programming the robot.',
-          'Took part in component machining and assembly.',
-          'Competed with the team at several events, winning a Third Prize and the Team Sustainability Award.',
-        ],
-      },
-    ],
-  },
-  {
-    slug: 'buddhist-temple',
-    kind: 'activity',
-    accent: 'amber',
-    icon: 'lotus',
-    tag: 'Reflection',
-    title: 'Buddhist Temple Residency',
-    role: 'Resident & Volunteer Mentor',
-    summary:
-      'Lived in a Buddhist temple for two months studying meditation, philosophy and contemplative practice, then returned as a long-term volunteer mentoring younger participants.',
-    facts: [
-      { label: 'Role', value: 'Resident, then volunteer mentor' },
-      { label: 'Residency', value: 'Two months' },
-    ],
-    lead:
-      'I spent two months living in a Buddhist temple, following its daily rhythm — and kept going back.',
-    sections: [
-      {
-        heading: 'Living there',
-        paragraphs: [
-          'I followed the temple’s daily rituals while studying meditation, Buddhist philosophy and contemplative practice.',
-        ],
-      },
-      {
-        heading: 'Going back',
-        paragraphs: [
-          'I returned as a long-term volunteer and peer mentor, supporting younger participants. The experience deepened my interest in religion, consciousness and the role of spiritual practice in wellbeing — and later led to the meditation club.',
-        ],
-      },
+      { src: '/media/chamber-rehearsal.mp4', poster: posterChamber, title: 'Rehearsal clip — five players, one score. Learning to listen instead of lead.', portrait: true },
     ],
   },
   {
@@ -575,6 +520,33 @@ export const projects: Project[] = [
       { src: '/media/fantuan-play.mp4', poster: posterPlay, title: 'Playtime with Fantuan', portrait: true },
       { src: '/media/fantuan-stairs.mp4', poster: posterStairs, title: 'Fantuan on the stairs', portrait: true },
       { src: '/media/fantuan-vase.mp4', poster: posterVase, title: 'Fantuan exploring', portrait: true },
+    ],
+  },
+  {
+    slug: 'first-robotics',
+    kind: 'activity',
+    accent: 'violet',
+    icon: 'robot',
+    tag: 'STEM',
+    title: 'FIRST Robotics Competition',
+    role: 'Programmer',
+    summary:
+      'Responsible for programming and part of the component machining and assembly. Competed with the team across several events, winning a Third Prize and the Team Sustainability Award.',
+    highlight: 'Third Prize · Team Sustainability Award',
+    facts: [
+      { label: 'Role', value: 'Programmer' },
+      { label: 'Awards', value: 'Third Prize · Team Sustainability Award' },
+    ],
+    lead: 'On my FIRST Robotics team I wrote the robot’s code and helped build it.',
+    sections: [
+      {
+        heading: 'My role',
+        bullets: [
+          'Responsible for programming the robot.',
+          'Took part in component machining and assembly.',
+          'Competed with the team at several events, winning a Third Prize and the Team Sustainability Award.',
+        ],
+      },
     ],
   },
 ];

@@ -4,7 +4,8 @@ import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import { profile, highlights, about, academics, gallery, performance, awards } from '../data/site';
+import Clip from '../components/Clip.astro';
+import { profile, highlights, about, academics, gallery, performance, ensembleClip, awards } from '../data/site';
 import { researchProjects, activityProjects, projectHref } from '../data/projects';
 
 const featured = researchProjects.filter((p) => p.featured);
@@ -59,7 +60,16 @@ const stars = [
         <div class="about__body reveal">
           <p class="eyebrow">About me</p>
           <h2>{about.heading[0]}<br />{about.heading[1]}</h2>
-          {about.paragraphs.map((p) => <p>{p}</p>)}
+          <figure class="about__early">
+            <Image src={about.early.src} alt={about.early.alt} width={240} />
+            <figcaption>{about.early.caption}</figcaption>
+          </figure>
+          <p>{about.paragraphs[0]}</p>
+          <div class="clip-row">
+            {about.clips.map((c) => <Clip {...c} />)}
+          </div>
+          <p class="caption">{about.clipsNote}</p>
+          {about.paragraphs.slice(1).map((p) => <p>{p}</p>)}
           <dl class="about__facts">
             {about.facts.map((f) => (
               <div><dt>{f.label}</dt><dd>{f.value}</dd></div>
@@ -111,6 +121,11 @@ const stars = [
                 </figure>
               ))}
             </div>
+            {f.homeVideo && (
+              <div class="clip-row clip-row--single">
+                <Clip {...f.homeVideo} />
+              </div>
+            )}
             <div class="feature__foot">
               <a class="btn btn--ghost" href={projectHref(f)}>Read the full project →</a>
               {f.paper && <a class="text-link" href={f.paper.href} target="_blank" rel="noopener">Paper (PDF)</a>}
@@ -207,6 +222,9 @@ const stars = [
             <source src={performance.video} type="video/mp4" />
             Your browser does not support embedded video. <a href={performance.video}>Download the performance</a>.
           </video>
+        </div>
+        <div class="clip-row clip-row--single" style="margin-top: 40px">
+          <Clip {...ensembleClip} />
         </div>
       </div>
     </section>
