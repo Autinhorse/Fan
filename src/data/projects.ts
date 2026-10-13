@@ -530,11 +530,13 @@ export const projects: Project[] = [
     tag: 'STEM',
     title: 'FIRST Robotics Competition',
     role: 'Programmer',
+    dates: '2026',
     summary:
       'Responsible for programming and part of the component machining and assembly. Competed with the team across several events, winning a Third Prize and the Team Sustainability Award.',
     highlight: 'Third Prize · Team Sustainability Award',
     facts: [
       { label: 'Role', value: 'Programmer' },
+      { label: 'Season', value: '2026' },
       { label: 'Awards', value: 'Third Prize · Team Sustainability Award' },
     ],
     lead: 'On my FIRST Robotics team I wrote the robot’s code and helped build it.',

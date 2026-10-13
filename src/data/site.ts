@@ -128,7 +128,7 @@ export const awards = [
   { icon: 'atom' as IconName, title: 'Physics Bowl — National Silver Award', org: 'American Association of Physics Teachers', year: '2025', body: 'National silver recognition in the AAPT high-school physics competition.' },
   { icon: 'sigma' as IconName, title: 'AMC 10 — AIME Qualifier', org: 'Mathematical Association of America', year: '2025', body: 'Scored 111 on the AMC 10, qualifying for the American Invitational Mathematics Examination (AIME).' },
   { icon: 'music' as IconName, title: 'ABRSM Viola Grade 8 — Distinction', org: 'Associated Board of the Royal Schools of Music', year: '', body: 'Passed the ABRSM Grade 8 viola practical exam with Distinction.' },
-  { icon: 'robot' as IconName, title: 'FIRST Robotics — Third Prize', org: 'FIRST Robotics Competition', year: '', body: 'As the team’s programmer, won a Third Prize and the Team Sustainability Award.' },
+  { icon: 'robot' as IconName, title: 'FIRST Robotics — Third Prize', org: 'FIRST Robotics Competition', year: '2026', body: 'As the team’s programmer, won a Third Prize and the Team Sustainability Award at the 2026 FIRST Robotics Competition.' },
   { icon: 'bulb' as IconName, title: 'Invention Patent Application — Smart Helmet HUD', org: 'Application filed · pending examination', year: '', body: 'Invention patent application filed for the heads-up display helmet described under Research & Engineering; pending examination.' },
 ];
 
