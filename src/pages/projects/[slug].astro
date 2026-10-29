@@ -84,6 +84,14 @@ const portrait = (p.videos ?? []).map((v, i) => ({ ...v, posterSrc: posters[i].s
           </section>
         ))}
 
+        {p.abstract && (
+          <section class="detail-section reveal">
+            <h2>Abstract</h2>
+            <p>{p.abstract}</p>
+            {p.keywords && <p class="caption"><strong>Keywords:</strong> {p.keywords.join(' · ')}</p>}
+          </section>
+        )}
+
         {p.quotes && (
           <section class="detail-section reveal">
             <h2>In others’ words</h2>

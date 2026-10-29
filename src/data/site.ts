@@ -103,7 +103,7 @@ export const gallery: (Figure & { tall?: boolean })[] = [
   { src: ltHeadband, alt: 'The custom EEG headband', caption: 'LearnTune headband' },
   { src: posterLearntune, alt: 'A participant wearing the EEG headband during an experiment session', caption: 'LearnTune experiment session' },
   { src: cyclingSunset, alt: 'Zimo cycling along a coastal road at sunset', caption: 'Evening ride', tall: true },
-  { src: zimoFantuan, alt: 'Zimo studying with Fantuan the cat on the desk', caption: 'Study partner' },
+  { src: zimoFantuan, alt: 'Zimo sitting on the stairs holding Fantuan, a long-haired white cat', caption: 'With Fantuan', tall: true },
   { src: meditationBowls, alt: 'Singing bowls for a meditation session', caption: 'Meditation club sound bath' },
   { src: campusWalk, alt: 'Zimo walking along a snowy campus path at dusk', caption: 'Winter walk', tall: true },
   { src: fantuan, alt: 'Fantuan, a long-haired white cat, sitting on a stack of books', caption: 'Fantuan' },
@@ -124,6 +124,7 @@ export const ensembleClip: Clip = {
 };
 
 export const awards = [
+  { icon: 'brain' as IconName, title: 'Paper Accepted — Brain Informatics', org: 'International Conference on Brain Informatics', year: '2026', body: 'First-author paper on LearnTune, a multimodal closed-loop music biofeedback system built around a custom EEG headband.' },
   { icon: 'grad' as IconName, title: 'Pioneer Research Program — Grade A', org: 'Pioneer Academics · credit awarded by Oberlin College', year: '2026', body: 'My animal-assisted therapy paper was independently reviewed by Oberlin faculty and rated “Excellent” in originality, communication, synthesis and curiosity.' },
   { icon: 'atom' as IconName, title: 'Physics Bowl — National Silver Award', org: 'American Association of Physics Teachers', year: '2025', body: 'National silver recognition in the AAPT high-school physics competition.' },
   { icon: 'sigma' as IconName, title: 'AMC 10 — AIME Qualifier', org: 'Mathematical Association of America', year: '2025', body: 'Scored 111 on the AMC 10, qualifying for the American Invitational Mathematics Examination (AIME).' },

@@ -101,7 +101,7 @@ const stars = [
                   {f.points?.map((p) => <li>{p}</li>)}
                 </ul>
                 {f.paper && (
-                  <p class="feature__paper"><em>{f.paper.title}</em><br />{f.paper.note}</p>
+                  <p class="feature__paper">{f.highlight && <><strong>{f.highlight}</strong><br /></>}<em>{f.paper.title}</em><br />{f.paper.note}</p>
                 )}
               </div>
               {f.hero && (

@@ -72,6 +72,9 @@ export interface Project {
   figures?: Figure[];
   videos?: Video[];
   paper?: Paper;
+  /** Published abstract, shown on the detail page. */
+  abstract?: string;
+  keywords?: string[];
   lesson?: string;
 }
 
@@ -86,6 +89,7 @@ export const projects: Project[] = [
     title: 'LearnTune: Closed-Loop Music Neurofeedback',
     role: 'Student Researcher · Shing-Tung Yau High School Science Award project',
     dates: 'Nov 2025 – Present',
+    highlight: 'Accepted · International Conference on Brain Informatics',
     summary:
       'A wearable system that reads a learner’s state and adapts music in real time. I designed and built a custom scalp-EEG headband, fused it with camera-derived heart rate and facial arousal, and ran a within-participant experiment during word learning.',
     points: [
@@ -106,6 +110,7 @@ export const projects: Project[] = [
     homeVideo: { src: '/media/learntune-experiment.mp4', poster: posterLearntune, title: 'A participant wearing the EEG headband during a word-learning session.' },
     facts: [
       { label: 'Role', value: 'Student Researcher (first author)' },
+      { label: 'Publication', value: 'Accepted at the International Conference on Brain Informatics' },
       { label: 'Timeline', value: 'Nov 2025 – Present' },
       { label: 'Collaborator', value: 'Ting Jiang, Faculty of Psychology, Beijing Normal University' },
       { label: 'Participants', value: '29 behavioral · 24 EEG state analysis' },
@@ -139,7 +144,7 @@ export const projects: Project[] = [
       {
         heading: 'What I found',
         bullets: [
-          'Over the full feedback period, the standard deviation of the composite index was 12.8% lower under closed-loop feedback (Wilcoxon p = 0.0231; paired t-test after BH correction p = 0.0554). Because the two tests disagree after correction, this is an exploratory result, not a confirmed effect.',
+          'Over the full feedback period, the standard deviation of the composite index was 12.8% lower under closed-loop feedback (Wilcoxon q = 0.0231; paired t-test BH q = 0.0554). Because the two tests disagree after correction, this is an exploratory result, not a confirmed effect.',
           'No significant difference was found in the mean level; changes in individual channels appeared mainly in facial arousal.',
           'No improvement was detected in recognition discriminability or reaction time — so the paper presents the system and its measurement limits, not a learning benefit.',
         ],
@@ -155,10 +160,13 @@ export const projects: Project[] = [
     ],
     paper: {
       title: 'LearnTune: An Exploratory Pilot Study of Multimodal Closed-Loop Music Biofeedback During Word Learning',
-      citation: 'Fan, Z., & Jiang, T. Manuscript (LNCS format).',
+      citation: 'Fan, Z., & Jiang, T. Accepted at the International Conference on Brain Informatics (BI), 2026.',
       href: '/papers/learntune-fan-jiang.pdf',
       note: 'Co-authored with Ting Jiang, Faculty of Psychology, Beijing Normal University.',
     },
+    abstract:
+      'Arousal-related variability is associated with attention and memory, but whether this association can be translated into intervention benefits during learning requires testing with specific measures and tasks. This exploratory pilot study presents the implementation of individually calibrated multimodal closed-loop music biofeedback during word learning and examines its operational feasibility and the measurement limitations of the composite state index. The system combines a frontal EEG power ratio, camera-derived heart rate, and facial arousal, continuously adjusting the music according to deviations of the state from an individual reference center without requiring learners to actively self-regulate. A within-participant experiment compared closed-loop music feedback with music presented using static parameters; the primary state analysis included 24 participants, and the behavioral analysis included 29. Over the full feedback period, which included a 25 s adaptation period, the standard deviation of the composite index was 12.8% lower under closed-loop feedback (paired t-test BH q = 0.0554; Wilcoxon q = 0.0231). No significant difference in the mean was detected, and differences in the variability of individual channels were observed mainly for facial arousal. No improvements were detected in recognition discriminability or reaction time for hits. The contribution lies in system implementation and assessment of the composite index’s measurement limitations; the present results do not demonstrate a learning benefit.',
+    keywords: ['Closed-loop music biofeedback', 'Individual calibration', 'Multimodal fusion', 'Arousal variability', 'Word learning'],
     lesson:
       'This was my first time carrying a research idea through the full pipeline. The hardest problem in neuroengineering is often not model accuracy, but the tension between real-world signal noise and experimental control.',
   },
@@ -509,7 +517,7 @@ export const projects: Project[] = [
       { src: childhoodRecital, alt: 'Young Zimo performing at a recital', caption: 'Childhood recital' },
       { src: childhoodTeacher, alt: 'Young Zimo with a violin teacher', caption: 'With my teacher' },
       { src: violaSoloBlack, alt: 'Zimo performing a viola solo in concert dress', caption: 'Concert solo' },
-      { src: zimoFantuan, alt: 'Zimo studying with Fantuan the cat on the desk', caption: 'Fantuan, my study partner' },
+      { src: zimoFantuan, alt: 'Zimo sitting on the stairs holding Fantuan, a long-haired white cat', caption: 'Fantuan and me' },
       { src: fantuan, alt: 'Fantuan, a long-haired white cat', caption: 'Fantuan' },
     ],
     videos: [
