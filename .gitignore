@@ -6,3 +6,10 @@ dist/
 
 # Original source material
 Raw/
+
+# Local-only material: personal documents, original photos, design references
+*.docx
+/微信图片_*
+Ref/
+Docs/
+.claude/
